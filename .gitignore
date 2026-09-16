@@ -1,0 +1,38 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# legacy static export backup (kept for reference, not part of the app)
+/_legacy-export-backup/
+
+# stray non-web asset, not used by the site
+/pu2.zip
+
+# Claude Code local session state
+/.claude/
