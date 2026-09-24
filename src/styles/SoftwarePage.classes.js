@@ -1,0 +1,22 @@
+// Original CSS-module class names, preserved to keep the exported design identical.
+export default {
+  modernCard: "page-module__m0vEfq__modernCard",
+  modernCardDesc: "page-module__m0vEfq__modernCardDesc",
+  modernCardIconWrapper: "page-module__m0vEfq__modernCardIconWrapper",
+  modernCardTitle: "page-module__m0vEfq__modernCardTitle",
+  serviceContainer: "page-module__m0vEfq__serviceContainer",
+  serviceCtaButton: "page-module__m0vEfq__serviceCtaButton",
+  serviceCtaContainer: "page-module__m0vEfq__serviceCtaContainer",
+  serviceCtaSection: "page-module__m0vEfq__serviceCtaSection",
+  serviceCtaText: "page-module__m0vEfq__serviceCtaText",
+  serviceCtaTitle: "page-module__m0vEfq__serviceCtaTitle",
+  serviceDetailSection: "page-module__m0vEfq__serviceDetailSection",
+  serviceHero: "page-module__m0vEfq__serviceHero",
+  serviceHeroContent: "page-module__m0vEfq__serviceHeroContent",
+  serviceHeroSubtitle: "page-module__m0vEfq__serviceHeroSubtitle",
+  serviceHeroTitle: "page-module__m0vEfq__serviceHeroTitle",
+  serviceHeroVideo: "page-module__m0vEfq__serviceHeroVideo",
+  serviceIconLarge: "page-module__m0vEfq__serviceIconLarge",
+  serviceTextIntro: "page-module__m0vEfq__serviceTextIntro",
+  servicesGrid: "page-module__m0vEfq__servicesGrid",
+};
