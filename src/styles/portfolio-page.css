@@ -3,6 +3,14 @@
   padding: 48px 20px 80px;
   transition: background-color 0.35s ease;
 }
+.portfolio-hint {
+  max-width: 1300px;
+  margin: 0 auto 18px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.65;
+}
 .portfolio-filters {
   max-width: 1300px;
   margin: 0 auto 48px;

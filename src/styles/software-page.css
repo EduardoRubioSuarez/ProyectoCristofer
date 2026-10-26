@@ -535,6 +535,19 @@
   .sw-split > *,
   .sw-it > * {
     min-width: 0;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+}
+
+/* Móvil: las palabras nunca se parten; el título se reduce hasta que la palabra más larga cabe */
+@media (max-width: 900px) {
+  .sw-it h3 {
+    font-size: clamp(1rem, 4.8vw, 1.8rem);
+    gap: 10px;
+  }
+  .sw-it h3 .sw-icon {
+    flex: none;
   }
 }

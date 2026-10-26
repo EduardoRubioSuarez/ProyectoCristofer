@@ -97,6 +97,9 @@ export default function PortfolioGrid() {
 
   return (
     <section id="casos" className="portfolio">
+      <p className="portfolio-hint">
+        Presiona una categoría para ver solo los proyectos que te interesan.
+      </p>
       <nav className="portfolio-filters" aria-label="Categorías del portafolio">
         <button
           type="button"
