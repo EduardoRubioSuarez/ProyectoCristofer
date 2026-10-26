@@ -1,0 +1,319 @@
+.ba {
+  padding: 90px 5%;
+  background: #fff;
+}
+.ba-inner {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 440px);
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.ba-title {
+  max-width: 12ch;
+  color: var(--text-primary);
+  font: 800 clamp(2.8rem, 6.6vw, 5.3rem) / 1.06 "LT Saeada", Inter, sans-serif;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.ba-title mark {
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 0.12em 0.04em;
+  border-radius: 0.1em;
+  background: var(--accent-light);
+  color: inherit;
+  font: inherit;
+  line-height: 0.95;
+}
+.ba-lead {
+  max-width: 40ch;
+  margin-top: 30px;
+  font-size: 1.55rem;
+  line-height: 1.6;
+}
+.ba-points {
+  display: grid;
+  gap: 12px;
+  margin-top: 30px;
+  list-style: none;
+  font: 700 1.55rem / 1.3 "LT Saeada", Inter, sans-serif;
+}
+.ba-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 38px;
+  padding: 20px 36px 22px;
+  border: 3px solid #000;
+  border-radius: 999px;
+  background: #000;
+  color: var(--accent-light);
+  font: 800 1.5rem / 1 "LT Saeada", Inter, sans-serif;
+  box-shadow: 0 12px 28px #00000033;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s, background-color 0.2s, color 0.2s;
+}
+.ba-link::after {
+  content: "→";
+  font-family: Inter, sans-serif;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ba-link:hover {
+  background: var(--accent-light);
+  color: #000;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px #0000003d;
+}
+.ba-link:hover::after {
+  transform: translateX(6px);
+}
+.ba-link:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}
+.ba-note {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.55;
+}
+
+/* Dispositivo */
+.ba-device {
+  position: relative;
+  aspect-ratio: 9 / 15;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 24px 60px #0000001f, 0 4px 14px #0000000f;
+  overflow: hidden;
+  user-select: none;
+}
+.ba-layer {
+  position: absolute;
+  inset: 0;
+}
+.ba-layer-top {
+  clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+.ba-chip {
+  position: absolute;
+  top: 14px;
+  padding: 3px 12px 5px;
+  border-radius: 999px;
+  font: 800 0.85rem "LT Saeada", Inter, sans-serif;
+  pointer-events: none;
+}
+.ba-chip-before {
+  left: 14px;
+  background: #000;
+  color: #fff;
+}
+.ba-chip-after {
+  right: 14px;
+  background: var(--accent-light);
+  color: #000;
+}
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 2px;
+  margin-left: -1px;
+  background: #000;
+  pointer-events: none;
+}
+.ba-handle i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  border: 2px solid #000;
+  box-shadow: 0 6px 16px #00000026;
+}
+.ba-handle i::before,
+.ba-handle i::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+.ba-handle i::before {
+  left: 11px;
+  transform: rotate(-45deg);
+}
+.ba-handle i::after {
+  right: 11px;
+  transform: rotate(135deg);
+}
+.ba-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  touch-action: pan-y;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.ba-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 56px;
+  height: 100vh;
+}
+.ba-range::-moz-range-thumb {
+  width: 56px;
+  height: 100%;
+  border: 0;
+}
+.ba-device:has(.ba-range:focus-visible) {
+  outline: 3px solid #000;
+  outline-offset: 4px;
+}
+
+/* Perfil simulado */
+.ba-profile {
+  width: 100%;
+  height: 100%;
+  padding: 56px 18px 18px;
+  background: #fff;
+  overflow: hidden;
+  font-family: Inter, sans-serif;
+}
+.ba-profile * {
+  font-family: inherit;
+}
+.ba-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.ba-avatar {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.ba-avatar-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ba-avatar-clean {
+  display: grid;
+  place-items: center;
+  background: #000;
+  color: var(--accent-light);
+}
+.ba-avatar-clean span {
+  font: 800 2.2rem / 1 "LT Saeada", Inter, sans-serif;
+}
+.ba-stats {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  gap: 6px;
+  font-size: 0.66rem;
+  text-align: center;
+}
+.ba-stats span {
+  display: grid;
+}
+.ba-stats b {
+  font-size: 0.95rem;
+}
+.ba-name {
+  margin-top: 12px;
+  font: 800 1.05rem "LT Saeada", Inter, sans-serif !important;
+}
+.ba-bio-clean {
+  margin-top: 2px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+.ba-bio-messy {
+  margin-top: 10px;
+  font-size: 0.62rem;
+  line-height: 1.25;
+  color: #1a73e8;
+  font-weight: 700;
+  word-break: break-word;
+}
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-top: 16px;
+}
+.ba-tile {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  padding: 6px;
+  text-align: center;
+  line-height: 1.05;
+  overflow: hidden;
+}
+.ba-clean {
+  font: 800 0.9rem / 1.05 "LT Saeada", Inter, sans-serif;
+  letter-spacing: -0.01em;
+}
+.ba-messy {
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+.ba-messy.s1 {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 0.95rem;
+  transform: rotate(-4deg);
+}
+.ba-messy.s2 {
+  font-family: "Brush Script MT", cursive;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+.ba-messy.s3 {
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+}
+.ba-messy.s4 {
+  font-family: Georgia, serif;
+  font-size: 0.75rem;
+  text-shadow: 2px 2px 0 #00000055;
+}
+
+@media (max-width: 860px) {
+  .ba {
+    padding: 64px 20px;
+  }
+  .ba-inner {
+    grid-template-columns: 1fr;
+  }
+  .ba-title {
+    max-width: none;
+  }
+  .ba-stage {
+    width: min(100%, 400px);
+    margin: 0 auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ba-link,
+  .ba-link::after {
+    transition: none;
+  }
+}

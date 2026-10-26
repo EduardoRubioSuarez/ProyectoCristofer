@@ -1,0 +1,32 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "public/propuestas/c.html"
+        ],
+        "createdAt": "2026-10-19T08:01:34.440Z",
+        "reason": "assistant: false positive; gray text sits on explicit dark surfaces #0b0d10/#12151a (~6:1), detector resolves white"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-19T22:41:13.722Z",
+        "reason": "Inter is the site's self-hosted brand font (public/fonts/Inter-Variable.woff2), used project-wide; proposal mockup matches it"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "public/propuestas/contacto-f.html"
+        ],
+        "createdAt": "2026-10-19T22:59:54.593Z",
+        "reason": "assistant: false positive; map tile intentionally clips decorative road bars that bleed past its edges, the pin and label sit well inside"
+      }
+    ]
+  }
+}

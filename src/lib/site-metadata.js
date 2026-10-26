@@ -26,8 +26,8 @@ export default {
   icons: {
     icon: [
       {
-        url: "/icon.png?icon.efd2afa0.png",
-        sizes: "1280x1280",
+        url: "/icon.png",
+        sizes: "512x512",
         type: "image/png",
       },
     ],

@@ -1,0 +1,352 @@
+.tl {
+  --tl-r: #ff1515;
+  --tl-bg: #0e0808;
+  --tl-bg2: #190d0d;
+  --tl-line: #3a2323;
+  --tl-t: #f6eded;
+  --tl-m: #c9b4b4;
+  --tl-ink: #1c0f0f;
+  background: var(--tl-bg);
+  color: var(--tl-t);
+  line-height: 1.55;
+  overflow-x: clip;
+}
+.tl-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.tl-icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+}
+.tl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--tl-r);
+  color: var(--tl-ink);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 14px 30px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.tl-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px #000000aa;
+}
+
+/* ===== Hero ===== */
+.tl-hero {
+  padding: 150px 0 50px;
+}
+.tl-h1 {
+  font: 800 clamp(2.8rem, 8vw, 7.4rem) / 0.92 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.tl-h1 span {
+  color: var(--tl-r);
+  display: block;
+}
+.tl-hero-b {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+.tl-sub {
+  max-width: 540px;
+  font-size: 1.12rem;
+  color: var(--tl-m);
+}
+.tl-sub b {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== Escenario ===== */
+.tl-deck {
+  padding: 20px 0 90px;
+}
+.tl-dh {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.tl-deck h2 {
+  font: 800 clamp(1.8rem, 3.6vw, 3rem) / 1.05 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+}
+.tl-dh p {
+  color: var(--tl-m);
+  max-width: 460px;
+  font-size: 0.98rem;
+}
+.tl-stage {
+  position: relative;
+  aspect-ratio: 16 / 8.6;
+  border-radius: 26px;
+  overflow: hidden;
+  background: var(--tl-bg2);
+  border: 1px solid var(--tl-line);
+}
+.tl-stage:focus-visible {
+  outline: 2px solid var(--tl-r);
+  outline-offset: 4px;
+}
+.tl-prog {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: #ffffff1f;
+  z-index: 6;
+}
+.tl-prog i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--tl-r);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.tl-prog i.is-run {
+  animation: tl-fill 9s linear forwards;
+}
+@keyframes tl-fill {
+  to {
+    transform: scaleX(1);
+  }
+}
+.tl-sl {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.7s,
+    visibility 0.7s;
+}
+.tl-sl.is-on {
+  opacity: 1;
+  visibility: visible;
+}
+.tl-sl img {
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 9s linear;
+}
+.tl-sl.is-on img {
+  transform: scale(1);
+}
+.tl-sl:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0e0808f2 0%, #0e0808e0 38%, #0e080866 70%, #0e080833 100%);
+  z-index: 1;
+}
+.tl-c {
+  position: absolute;
+  z-index: 2;
+  left: clamp(24px, 4.5vw, 64px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(560px, 58%);
+}
+.tl-sl h3 {
+  font: 800 clamp(1.7rem, 3.4vw, 3.1rem) / 1 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.tl-sl p {
+  color: var(--tl-m);
+  font-size: clamp(0.88rem, 1.15vw, 1rem);
+  margin-bottom: 18px;
+  max-width: 52ch;
+}
+.tl-sl ul {
+  list-style: none;
+  margin-bottom: 22px;
+}
+.tl-sl li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 6px 0;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  font-weight: 500;
+  opacity: 0;
+  transform: translateX(-14px);
+}
+.tl-sl li:before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--tl-r);
+  flex-shrink: 0;
+}
+.tl-sl.is-on li {
+  animation: tl-bullet 0.5s forwards;
+}
+.tl-sl.is-on li:nth-child(1) {
+  animation-delay: 0.45s;
+}
+.tl-sl.is-on li:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.tl-sl.is-on li:nth-child(3) {
+  animation-delay: 1.15s;
+}
+.tl-sl.is-on li:nth-child(4) {
+  animation-delay: 1.5s;
+}
+@keyframes tl-bullet {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.tl-ctrl {
+  position: absolute;
+  z-index: 6;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px clamp(18px, 3vw, 36px);
+  background: linear-gradient(0deg, #0e0808cc, transparent);
+}
+.tl-dots {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tl-dot {
+  border: 1px solid #ffffff55;
+  background: #0e080866;
+  color: var(--tl-t);
+  border-radius: 99px;
+  padding: 7px 14px;
+  font: 600 0.8rem Inter, sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tl-dot:hover {
+  border-color: #fff;
+}
+.tl-dot.is-on {
+  background: var(--tl-r);
+  border-color: var(--tl-r);
+  color: var(--tl-ink);
+}
+.tl-arrows {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.tl-arrows span {
+  font-size: 0.85rem;
+  color: var(--tl-m);
+  margin-right: 6px;
+}
+.tl-ab {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #ffffff66;
+  background: #0e080866;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tl-ab:hover {
+  background: #fff;
+  color: var(--tl-ink);
+}
+.tl-ab svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== CTA ===== */
+.tl-cta {
+  background: var(--tl-r);
+  color: var(--tl-ink);
+  padding: 110px 0;
+  text-align: center;
+}
+.tl-cta h2 {
+  font: 800 clamp(2.2rem, 5.2vw, 4.4rem) / 1.05 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+  max-width: 900px;
+  margin: 0 auto 18px;
+}
+.tl-cta p {
+  max-width: 520px;
+  margin: 0 auto 34px;
+  font-size: 1.08rem;
+}
+.tl-cta .tl-btn {
+  background: var(--tl-ink);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .tl-stage {
+    aspect-ratio: auto;
+    min-height: 780px;
+  }
+  .tl-sl:before {
+    background: linear-gradient(180deg, #0e0808cc 0%, #0e0808f0 60%);
+  }
+  .tl-c {
+    width: auto;
+    right: 22px;
+    left: 22px;
+    top: 46px;
+    transform: none;
+  }
+  .tl-ctrl {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tl-arrows {
+    align-self: flex-end;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tl-sl img {
+    transition: none;
+    transform: none;
+  }
+  .tl-sl li {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+  .tl-prog i.is-run {
+    animation: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .tl-h1 {
+    font-size: 2.2rem;
+  }
+}

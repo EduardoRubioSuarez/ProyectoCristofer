@@ -1,9 +1,7 @@
 "use client";
 // Recovered from the exported application; handlers and rendered markup are preserved.
 import * as ReactJSX from "react/jsx-runtime";
-import NextImage from "next/image";
 import NextLink from "next/link";
-import * as FeatherIcons from "react-icons/fi";
 import * as IconUtils from "react-icons";
 import styles from "../styles/Footer.classes.js";
 function Icon_c(e) {
@@ -96,56 +94,50 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.footerTop}>
-          <div className={styles.footerBrand}>
-            <NextImage
-              src={"/logo1.png"}
-              alt={"ISA'S MARKETING DIGITAL"}
-              width={120}
-              height={120}
-              className={styles.footerLogo}
-            />
-            <p className={styles.brandDescription}>
-              {
-                "Agencia digital especializada en impulsar marcas con estrategia, soluciones tecnológicas, creatividad e inteligencia artificial."
-              }
-            </p>
-          </div>
-          <div className={styles.footerLinks}>
+          <p className={styles.footerCta}>
+            {"Tu marca, "}
+            <mark>{"en buenas manos."}</mark>
+          </p>
+          <div className={styles.footerCol}>
             <h4 className={styles.footerHeading}>{"Servicios"}</h4>
-            <NextLink href={"/gestion-redes-sociales"}>
+            <NextLink
+              href={"/gestion-redes-sociales"}
+              style={{ "--cat": "#FFFBA6" }}
+            >
               {"Redes Sociales"}
             </NextLink>
-            <NextLink href={"/talleres-capacitacion"}>
+            <NextLink
+              href={"/talleres-capacitacion"}
+              style={{ "--cat": "#FFC2C2" }}
+            >
               {"Talleres + Capacitación"}
             </NextLink>
-            <NextLink href={"/paginas-web-ia"}>
+            <NextLink href={"/paginas-web-ia"} style={{ "--cat": "#C9C9FF" }}>
               {"Desarrollo de Software + IA"}
             </NextLink>
-            <NextLink href={"/consultoria-asesorias"}>
+            <NextLink
+              href={"/consultoria-asesorias"}
+              style={{ "--cat": "#DADADA" }}
+            >
               {"Consultoría + Asesorías"}
             </NextLink>
           </div>
-          <div className={styles.footerLinks}>
+          <div className={styles.footerCol}>
             <h4 className={styles.footerHeading}>{"Empresa"}</h4>
-            <NextLink href={"/#conocenos"}>{"Conócenos"}</NextLink>
+            <NextLink href={"/conocenos"}>{"Conócenos"}</NextLink>
             <NextLink href={"/#clientes"}>{"Clientes"}</NextLink>
             <NextLink href={"/casos-exito"}>{"Casos de Éxito"}</NextLink>
             <NextLink href={"/contacto"}>{"Contacto"}</NextLink>
           </div>
-          <div className={styles.footerContact}>
+          <div className={styles.footerCol}>
             <h4 className={styles.footerHeading}>{"Contacto"}</h4>
-            <div className={styles.contactItem}>
-              <FeatherIcons.FiPhone size={16} />
-              <span>{"612 117 70 02"}</span>
-            </div>
-            <div className={styles.contactItem}>
-              <FeatherIcons.FiMapPin size={16} />
-              <span>{"Calle Toronja esq. Blvd. Colosio, La Paz, B.C.S."}</span>
-            </div>
-            <div className={styles.contactItem}>
-              <FeatherIcons.FiClock size={16} />
-              <span>{"Lun - Vie: 9:00 AM - 6:00 PM"}</span>
-            </div>
+            <span className={styles.footerText}>{"612 117 70 02"}</span>
+            <span className={styles.footerText}>
+              {"Calle Toronja esq. Blvd. Colosio, La Paz, B.C.S."}
+            </span>
+            <span className={styles.footerText}>
+              {"Lun - Vie: 9:00 AM - 6:00 PM"}
+            </span>
           </div>
         </div>
         <div className={styles.footerBottom}>
@@ -154,6 +146,7 @@ function Footer() {
               href={"https://www.facebook.com/profile.php?id=61573283512221"}
               target={"_blank"}
               rel={"noopener noreferrer"}
+              aria-label={"Facebook"}
               className={styles.socialIcon}
             >
               <Icon_d size={15} />
@@ -162,6 +155,7 @@ function Footer() {
               href={"https://wa.me/526122195577"}
               target={"_blank"}
               rel={"noopener noreferrer"}
+              aria-label={"WhatsApp"}
               className={styles.socialIcon}
             >
               <Icon_c size={15} />
@@ -170,6 +164,7 @@ function Footer() {
               href={"https://instagram.com/ISASMARKETING.DIGITAL"}
               target={"_blank"}
               rel={"noopener noreferrer"}
+              aria-label={"Instagram"}
               className={styles.socialIcon}
             >
               <Icon_n size={15} />
@@ -178,11 +173,13 @@ function Footer() {
               href={"https://www.tiktok.com/@isas.marketing.of"}
               target={"_blank"}
               rel={"noopener noreferrer"}
+              aria-label={"TikTok"}
               className={styles.socialIcon}
             >
               <Icon_l size={14} />
             </a>
-            <a href={"#"} className={styles.socialIcon}>
+            <a href={"#"} aria-label={"LinkedIn"}
+              className={styles.socialIcon}>
               <Icon_i size={15} />
             </a>
           </div>
@@ -191,6 +188,9 @@ function Footer() {
             {new Date().getFullYear()}
             {" Isa's Marketing Digital. Todos los derechos reservados."}
           </p>
+        </div>
+        <div className={styles.footerWord} aria-hidden="true">
+          {"Isa's"}
         </div>
       </div>
     </footer>

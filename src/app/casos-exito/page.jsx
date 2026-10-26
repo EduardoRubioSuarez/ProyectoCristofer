@@ -1,4 +1,6 @@
 import Footer from "@/components/Footer.jsx";
+import PortfolioHero from "@/components/PortfolioHero.jsx";
+import PortfolioGrid from "@/components/PortfolioGrid.jsx";
 export const metadata = {
   openGraph: {
     title: "ISA'S AGENCIA DIGITAL - Agencia de Publicidad + IA",
@@ -37,79 +39,8 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <section className={"page-module__nXFJia__casesHero"}>
-        <div className={"page-module__nXFJia__heroGrid"} />
-        <div className={"page-module__nXFJia__heroContent"}>
-          <div
-            className={"page-module__nXFJia__heroBadge"}
-            data-aos={"fade-down"}
-          >
-            {"Portfolio"}
-          </div>
-          <h1
-            className={"page-module__nXFJia__casesHeroTitle"}
-            data-aos={"fade-up"}
-            data-aos-delay={"100"}
-          >
-            {"CASOS DE ÉXITO"}
-          </h1>
-          <p
-            className={"page-module__nXFJia__casesHeroSubtitle"}
-            data-aos={"fade-up"}
-            data-aos-delay={"200"}
-          >
-            {
-              "Transformamos desafíos en oportunidades. Descubre cómo hemos ayudado a empresas de diferentes sectores a alcanzar resultados extraordinarios con estrategias de marketing inteligentes y efectivas."
-            }
-          </p>
-          <a
-            href={"#casos"}
-            className={"page-module__nXFJia__heroCta"}
-            data-aos={"fade-up"}
-            data-aos-delay={"300"}
-          >
-            {"EXPLORAR CASOS"}
-            <svg
-              stroke={"currentColor"}
-              fill={"none"}
-              strokeWidth={"2"}
-              viewBox={"0 0 24 24"}
-              strokeLinecap={"round"}
-              strokeLinejoin={"round"}
-              style={{}}
-              height={16}
-              width={16}
-              xmlns={"http://www.w3.org/2000/svg"}
-            >
-              <line x1={"12"} y1={"5"} x2={"12"} y2={"19"} />
-              <polyline points={"19 12 12 19 5 12"} />
-            </svg>
-          </a>
-        </div>
-      </section>
-      <section id={"casos"} className={"page-module__nXFJia__casesSection"}>
-        <div
-          className={"page-module__nXFJia__sectionHeader"}
-          data-aos={"fade-up"}
-        >
-          <div className={"page-module__nXFJia__sectionSubtitle"}>
-            {"NUESTRO TRABAJO"}
-          </div>
-          <h2 className={"page-module__nXFJia__sectionMainTitle"}>
-            {"HISTORIAS DE ÉXITO"}
-          </h2>
-          <div className={"page-module__nXFJia__comingSoon"}>
-            <h3 className={"page-module__nXFJia__comingSoonTitle"}>
-              {"PRÓXIMAMENTE"}
-            </h3>
-            <p className={"page-module__nXFJia__sectionDescription"}>
-              {
-                "Estamos preparando casos de éxito detallados que demostrarán cómo hemos ayudado a nuestros clientes a alcanzar sus objetivos. ¡Vuelve pronto para conocer estas historias inspiradoras!"
-              }
-            </p>
-          </div>
-        </div>
-      </section>
+      <PortfolioHero />
+      <PortfolioGrid />
       <Footer />
     </>
   );

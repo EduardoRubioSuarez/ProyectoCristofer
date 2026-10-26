@@ -1,0 +1,190 @@
+/* Pulido de movimiento para móvil: solo curvas, capas de GPU y feedback táctil.
+   No cambia tamaños, colores ni layout. Va después de globals.css y pages.css. */
+
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-press: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (hover: none) {
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary {
+    touch-action: manipulation;
+  }
+  /* En táctil el :hover se queda pegado tras tocar: el feedback es el :active. */
+  button:not(:disabled),
+  a[class*="btn" i],
+  a[class*="button" i],
+  a[class*="cta" i],
+  a[class*="Action" i] {
+    transition-property:
+      transform, opacity, background-color, border-color, color, box-shadow;
+    transition-duration: 0.45s;
+    transition-timing-function: var(--ease-press);
+  }
+  button:not(:disabled):active,
+  a[class*="btn" i]:active,
+  a[class*="button" i]:active,
+  a[class*="cta" i]:active,
+  a[class*="Action" i]:active {
+    transform: scale(0.97);
+    transition-duration: 0.12s;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Menú: cajón con curva de frenado suave. */
+  .Navbar-module___rHu7W__navMenu {
+    visibility: hidden;
+    will-change: transform;
+    overscroll-behavior: contain;
+    transition:
+      transform 0.55s var(--ease-drawer),
+      visibility 0s linear 0.55s;
+  }
+  .Navbar-module___rHu7W__navMenu.Navbar-module___rHu7W__active {
+    visibility: visible;
+    transition:
+      transform 0.55s var(--ease-drawer),
+      visibility 0s;
+  }
+  .Navbar-module___rHu7W__navMenu > li {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+  .Navbar-module___rHu7W__navMenu.Navbar-module___rHu7W__active > li {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.5s var(--ease-out-expo),
+      transform 0.6s var(--ease-out-expo);
+  }
+  .Navbar-module___rHu7W__navMenu.Navbar-module___rHu7W__active > li:nth-child(1) { transition-delay: 0.12s; }
+  .Navbar-module___rHu7W__navMenu.Navbar-module___rHu7W__active > li:nth-child(2) { transition-delay: 0.17s; }
+  .Navbar-module___rHu7W__navMenu.Navbar-module___rHu7W__active > li:nth-child(3) { transition-delay: 0.22s; }
+  .Navbar-module___rHu7W__navMenu.Navbar-module___rHu7W__active > li:nth-child(4) { transition-delay: 0.27s; }
+  .Navbar-module___rHu7W__navMenu.Navbar-module___rHu7W__active > li:nth-child(5) { transition-delay: 0.32s; }
+  .Navbar-module___rHu7W__navMenu.Navbar-module___rHu7W__active > li:nth-child(6) { transition-delay: 0.37s; }
+
+  .Navbar-module___rHu7W__navLink {
+    transition-property: background-color, color, transform;
+    transition-duration: 0.25s;
+  }
+  .Navbar-module___rHu7W__navLink:active {
+    background: #edf1f5;
+  }
+
+  /* Submenú de Servicios y flecha. */
+  .Navbar-module___rHu7W__navItemDropdown.Navbar-module___rHu7W__dropdownActive
+    .Navbar-module___rHu7W__dropdownMenu {
+    animation: m-sub-in 0.45s var(--ease-out-expo) both;
+  }
+  .Navbar-module___rHu7W__dropdownIcon {
+    transition: transform 0.45s var(--ease-drawer);
+  }
+  .Navbar-module___rHu7W__hamburger svg {
+    animation: m-icon-in 0.35s var(--ease-out-expo) both;
+  }
+  .Navbar-module___rHu7W__navbarLogo {
+    transition: opacity 0.4s ease;
+  }
+  .navbar-logo-link {
+    transition:
+      opacity 0.45s var(--ease-press),
+      transform 0.45s var(--ease-press);
+  }
+
+  /* Tarjetas: fuera "transition: all". */
+  .page-module___8aEwW__bentoCard,
+  .page-module___8aEwW__modernCard,
+  .page-module__FRxzqq__pricingCard,
+  .page-module___8aEwW__aboutPart {
+    transition-property:
+      transform, opacity, background-color, border-color, box-shadow;
+    transition-duration: 0.5s;
+    transition-timing-function: var(--ease-press);
+  }
+  .page-module___8aEwW__bentoIconWrapper,
+  .page-module___8aEwW__modernCardIconWrapper,
+  .page-module__FRxzqq__cardIconWrapper,
+  .page-module___8aEwW__modernCardAction,
+  .page-module__FRxzqq__cardButton,
+  .page-module___8aEwW__btnImpulsa,
+  .services-index-go {
+    transition-property:
+      transform, opacity, background-color, border-color, color, box-shadow;
+    transition-timing-function: var(--ease-press);
+  }
+
+  /* Capas compuestas para lo que se mueve continuamente. */
+  .GradientOrbs-module__A0lrLW__orb,
+  .page-module___8aEwW__philShape,
+  .team-shape,
+  .page-module___8aEwW__clientsLogos,
+  .clients-ink-run {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  .page-module___8aEwW__bentoGlow {
+    display: none;
+  }
+}
+
+/* Entrada al hacer scroll, solo donde el navegador la maneja en el hilo del compositor.
+   Usa `translate` y solo el estado inicial, así no pisa los transform de hover/active. */
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .page-module___8aEwW__bentoCard,
+    .page-module___8aEwW__modernCard,
+    .page-module__FRxzqq__pricingCard,
+    .page-module___8aEwW__aboutPart {
+      animation: m-rise linear backwards;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
+
+@keyframes m-rise {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+  }
+}
+@keyframes m-sub-in {
+  from {
+    opacity: 0;
+    translate: 0 -8px;
+  }
+}
+@keyframes m-icon-in {
+  from {
+    opacity: 0;
+    rotate: -60deg;
+    scale: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Navbar-module___rHu7W__navMenu > li {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,243 @@
+.rs {
+  --rs-y: #fefb0b;
+  --rs-yt: #fffc59;
+  --rs-deep: #0c0b07;
+  background: var(--rs-deep);
+  color: #fff;
+  line-height: 1.55;
+}
+.rs-icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+}
+
+/* ===== Hero con video ===== */
+.rs-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.rs-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rs-hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0c0b0766 0%, #0c0b07cc 70%, #0c0b07 100%);
+}
+.rs-hero-in {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 160px 24px 70px;
+}
+.rs-h1 {
+  font: 800 clamp(3rem, 10.5vw, 9rem) / 0.9 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.rs-h1 span {
+  color: var(--rs-y);
+}
+.rs-cap {
+  display: inline-block;
+  margin-top: 34px;
+  max-width: 620px;
+  background: #000000cc;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: var(--rs-y);
+  line-height: 1.45;
+}
+.rs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--rs-y);
+  color: var(--rs-deep);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 14px 30px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.rs-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px #00000066;
+}
+.rs-hero .rs-btn {
+  margin: 30px 0 0 18px;
+  vertical-align: top;
+}
+
+/* ===== Capas pegajosas ===== */
+.rs-intro,
+.rs-layer {
+  position: sticky;
+  top: 0;
+  border-radius: 34px 34px 0 0;
+  box-shadow: 0 -18px 40px #0000004d;
+  display: flex;
+  align-items: center;
+}
+.rs-intro {
+  background: #fff;
+  color: var(--rs-deep);
+  min-height: 60vh;
+}
+.rs-intro-in {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  width: 100%;
+}
+.rs-intro h2 {
+  font: 800 clamp(1.8rem, 4vw, 3.4rem) / 1.05 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+  max-width: 820px;
+}
+.rs-intro p {
+  margin-top: 18px;
+  max-width: 600px;
+  color: #4b5563;
+  font-size: 1.1rem;
+}
+.rs-layer {
+  min-height: 86vh;
+}
+.rs-layer-in {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 70px 24px;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 56px;
+  align-items: end;
+}
+.rs-layer h3 {
+  font: 800 clamp(2.4rem, 6.2vw, 5.6rem) / 0.95 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.rs-layer .rs-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 22px;
+}
+.rs-layer p {
+  font-size: 1.18rem;
+  max-width: 36ch;
+}
+.rs-l1,
+.rs-l5 {
+  background: var(--rs-y);
+  color: var(--rs-deep);
+}
+.rs-l1 p,
+.rs-l5 p {
+  color: #2f2d00;
+}
+.rs-l2 {
+  background: var(--rs-deep);
+  color: #fff;
+  border-top: 1px solid #2b2a1c;
+}
+.rs-l2 h3,
+.rs-l2 .rs-icon {
+  color: var(--rs-y);
+}
+.rs-l2 p {
+  color: #cfcdb0;
+}
+.rs-l3 {
+  background: var(--rs-yt);
+  color: var(--rs-deep);
+}
+.rs-l3 p {
+  color: #33320a;
+}
+.rs-l4 {
+  background: #fff;
+  color: var(--rs-deep);
+}
+.rs-l4 p {
+  color: #4b5563;
+}
+.rs-l4 u {
+  text-decoration-color: var(--rs-y);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.1em;
+}
+
+/* ===== CTA ===== */
+.rs-cta {
+  position: relative;
+  background: var(--rs-deep);
+  border-radius: 34px 34px 0 0;
+  padding: 110px 24px;
+  text-align: center;
+  border-top: 1px solid #2b2a1c;
+}
+.rs-cta h2 {
+  font: 800 clamp(2.2rem, 5.6vw, 5rem) / 0.98 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+  max-width: 980px;
+  margin: 0 auto 24px;
+}
+.rs-cta h2 span {
+  color: var(--rs-y);
+}
+.rs-cta p {
+  max-width: 520px;
+  margin: 0 auto 34px;
+  color: #cfcdb0;
+}
+
+@media (max-width: 900px) {
+  .rs-layer {
+    min-height: auto;
+    position: relative;
+    border-radius: 26px 26px 0 0;
+    margin-top: -26px;
+  }
+  .rs-intro {
+    position: relative;
+  }
+  .rs-layer-in {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 60px 24px 80px;
+  }
+  .rs-hero .rs-btn {
+    margin: 24px 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rs-hero-video {
+    display: none;
+  }
+}
+
+/* Móvil estrecho: la columna única no debe crecer más que la pantalla */
+@media (max-width: 900px) {
+  .rs-layer-in {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rs-layer-in > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}

@@ -1,0 +1,36 @@
+.pf-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 80dvh;
+  padding: 130px 5% 70px;
+  background: var(--portfolio-bg, var(--bg-light));
+  transition: background-color 0.35s ease;
+  overflow: hidden;
+  text-align: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pf-hero {
+    transition: none;
+  }
+}
+.pf-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+}
+.pf-hero h1 {
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.pf-hero mark {
+  display: inline-block;
+  padding: 0 0.12em 0.04em;
+  border-radius: 0.1em;
+  background: var(--accent-light);
+  color: inherit;
+  font: inherit;
+  line-height: 0.95;
+}

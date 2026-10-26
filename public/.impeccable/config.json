@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-16T19:19:04.342Z",
+        "reason": "Inter is the existing site font in globals.css; mockup must match the real design system. Not user-confirmed."
+      }
+    ]
+  }
+}

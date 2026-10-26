@@ -1,0 +1,395 @@
+.cn {
+  --cn-k: #0a0a0b;
+  --cn-k2: #141416;
+  --cn-g: #d4d7dd;
+  --cn-m: #a3a7af;
+  --cn-line: #2a2b2f;
+  background: var(--cn-k);
+  color: #fff;
+  line-height: 1.55;
+  overflow-x: clip;
+}
+.cn-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.cn-icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+}
+.cn-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--cn-k);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 14px 30px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.cn-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px #000000aa;
+}
+.cn h2 {
+  font: 800 clamp(1.8rem, 3.6vw, 3rem) / 1.05 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+}
+
+/* ===== Hero con curvas de nivel ===== */
+.cn-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.cn-topo,
+.cn-trail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.cn-topo path {
+  fill: none;
+  stroke: #26272c;
+  stroke-width: 1.2;
+}
+.cn-trail {
+  z-index: 1;
+  pointer-events: none;
+}
+.cn-trail path {
+  fill: none;
+  stroke: var(--cn-g);
+  stroke-width: 2;
+  stroke-dasharray: 3 9;
+  stroke-linecap: round;
+  opacity: 0.7;
+  vector-effect: non-scaling-stroke;
+}
+.cn-trail circle {
+  fill: #fff;
+}
+.cn-hero .cn-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 120px;
+}
+.cn-h1 {
+  font: 800 clamp(3rem, 9.4vw, 8.4rem) / 0.9 "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.cn-h1 em {
+  font-style: normal;
+  color: var(--cn-g);
+  display: block;
+  padding-left: 0.9em;
+}
+.cn-hero-b {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-top: 44px;
+  flex-wrap: wrap;
+}
+.cn-sub {
+  max-width: 500px;
+  font-size: 1.15rem;
+  color: var(--cn-m);
+}
+.cn-tag {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--cn-k);
+  padding: 8px 14px;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.cn-tag-a {
+  left: 24px;
+  bottom: 34px;
+}
+.cn-tag-b {
+  right: 24px;
+  top: 120px;
+}
+.cn-tag i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cn-k);
+}
+
+/* ===== Ruta ligada al scroll ===== */
+.cn-route {
+  padding: 60px 0 40px;
+}
+.cn-rwrap {
+  position: relative;
+  height: 1750px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
+.cn-rsvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.cn-rsvg path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+.cn-base {
+  stroke: #2d2e33;
+  stroke-width: 3;
+  stroke-dasharray: 2 10;
+  stroke-linecap: round;
+}
+.cn-prog {
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.cn-pin {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--cn-k);
+  box-shadow: 0 0 0 8px #ffffff22;
+  display: grid;
+  place-items: center;
+}
+.cn-pin svg {
+  width: 16px;
+  height: 16px;
+}
+.cn-st {
+  position: absolute;
+  width: min(430px, 38%);
+  transform: translateY(-50%);
+  opacity: 0.28;
+  transition: opacity 0.6s;
+}
+.cn-st.is-on {
+  opacity: 1;
+}
+.cn-no {
+  display: block;
+  margin-bottom: 12px;
+  font: 800 clamp(4rem, 9vw, 8rem) / 0.8 "LT Saeada", Inter, sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #55575e;
+  transition: 0.6s;
+}
+.cn-st.is-on .cn-no {
+  -webkit-text-stroke-color: #fff;
+  color: #ffffff10;
+}
+.cn-st h3 {
+  font: 800 clamp(1.6rem, 2.8vw, 2.4rem) "LT Saeada", Inter, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.cn-st p {
+  color: var(--cn-m);
+  font-size: 1.02rem;
+}
+.cn-st.is-on p {
+  color: #d6d8dc;
+}
+.cn-s1 {
+  top: 7.5%;
+  left: calc(36% + 56px);
+}
+.cn-s2 {
+  top: 38%;
+  right: calc(36% + 56px);
+  text-align: right;
+}
+.cn-s3 {
+  top: 63%;
+  left: calc(36% + 56px);
+}
+.cn-s4 {
+  top: 88%;
+  right: calc(36% + 56px);
+  text-align: right;
+}
+
+/* ===== Alcance ===== */
+.cn-sec {
+  padding: 90px 0;
+  background: var(--cn-k2);
+  border-block: 1px solid var(--cn-line);
+}
+.cn-two {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 70px;
+  align-items: start;
+}
+.cn-txt p {
+  color: var(--cn-m);
+  margin-top: 20px;
+  max-width: 56ch;
+}
+.cn-txt h2 + p {
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+.cn-list {
+  counter-reset: cn-n;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--cn-line);
+}
+.cn-li {
+  display: flex;
+  align-items: baseline;
+  gap: 26px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--cn-line);
+  font: 600 clamp(1.05rem, 1.6vw, 1.2rem) Inter, sans-serif;
+  color: #fff;
+}
+.cn-li::before {
+  counter-increment: cn-n;
+  content: "0" counter(cn-n);
+  min-width: 46px;
+  font: 800 1.7rem "LT Saeada", Inter, sans-serif;
+  color: #4a4c52;
+}
+
+/* ===== CTA ===== */
+.cn-cta {
+  position: relative;
+  background: var(--cn-g);
+  color: var(--cn-k);
+  padding: 130px 0 100px;
+  text-align: center;
+}
+.cn-cta h2 {
+  font: 800 clamp(2.2rem, 5.4vw, 4.6rem) / 1 "LT Saeada", Inter, sans-serif;
+  max-width: 900px;
+  margin: 0 auto 18px;
+}
+.cn-cta p {
+  max-width: 540px;
+  margin: 0 auto 34px;
+  color: #33353a;
+}
+.cn-cta .cn-btn {
+  background: var(--cn-k);
+  color: #fff;
+}
+.cn-goal {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--cn-k);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 10px var(--cn-g);
+}
+.cn-goal svg {
+  width: 34px;
+  height: 34px;
+}
+
+@media (max-width: 900px) {
+  .cn-two {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cn-rwrap {
+    height: auto;
+    padding-left: 34px;
+  }
+  .cn-rsvg,
+  .cn-pin {
+    display: none;
+  }
+  .cn-rwrap:before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #fff;
+  }
+  .cn-st {
+    position: relative;
+    width: auto;
+    opacity: 1;
+    transform: none;
+    left: auto;
+    right: auto;
+    top: auto;
+    text-align: left;
+    padding: 0 0 56px;
+  }
+  .cn-st:before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 14px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--cn-k);
+    border: 3px solid #fff;
+  }
+  .cn-no {
+    font-size: 3.6rem;
+  }
+  .cn-tag-b {
+    top: 100px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cn-trail circle {
+    display: none;
+  }
+  .cn-st,
+  .cn-no {
+    transition: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .cn-h1 {
+    font-size: 2.4rem;
+  }
+}
